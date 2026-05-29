@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Registro de Cidadania - Horizon ID</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+    }
+    .gov-header-gradient {
+      background: linear-gradient(90deg, #052e16 0%, #020617 100%);
+    }
+    .rg-font {
+      font-family: 'Rajdhani', sans-serif;
+    }
+  </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col justify-between">
+
+  <header class="w-full">
+    <div class="bg-slate-900 border-b border-slate-800 px-4 py-2 flex justify-between items-center text-xs text-gray-400">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-gray-200">HORIZON ROLEPLAY</span>
+        <span>|</span>
+        <span>Portal de Serviços ao Cidadão</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:underline font-semibold text-green-400">ENTRAR NA CIDADE</a>
+        <a href="#" class="hover:underline hidden md:inline">Regulamento</a>
+        <a href="#" class="hover:underline hidden md:inline">Suporte</a>
+      </div>
+    </div>
+    
+    <div class="gov-header-gradient text-white px-4 py-5 shadow-md border-b border-emerald-950">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 bg-slate-950 rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1 border border-slate-800">
+            <img src="horizon.png" alt="Horizon Logo" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <h1 class="text-xl md:text-2xl font-bold tracking-tight text-white">Registro de Cidadania Integrado</h1>
+            <p class="text-xs text-emerald-400 uppercase tracking-widest font-semibold font-mono">Emissão Obrigatória de Documento de Fronteira - HORIZON ROLEPLAY</p>
+          </div>
+        </div>
+        <div class="bg-emerald-950/40 border border-emerald-500/20 rounded-lg px-3 py-1.5 text-xs flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          <span class="text-gray-100 font-medium text-xxs tracking-wider uppercase font-mono">ONLINE</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl w-full mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 my-auto items-stretch">
+    
+    <section class="lg:col-span-6 bg-slate-900 rounded-xl border border-slate-800 shadow-xl p-6 flex flex-col justify-between">
+      <div class="space-y-6">
+        <div class="border-b border-slate-800 pb-4 flex justify-between items-center">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-address-card text-green-500"></i> Solicitação de Horizon ID (HID)
+          </h2>
+          <span class="text-xs font-semibold bg-emerald-950 text-emerald-400 px-2 py-1 rounded border border-emerald-800/30">Passaporte de Entrada</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Nome do Personagem <span class="text-red-400">*</span></label>
+            <input type="text" id="charName" placeholder="EX: CARLOS SILVA" value="CARLOS SILVA"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors uppercase">
+            <span class="text-[10px] text-gray-500 block">Insira o nome de registro na cidade.</span>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Apelido / Vulgo</label>
+            <input type="text" id="charNick" placeholder="EX: SCARFACE" value="SCARFACE"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors uppercase">
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Sexo Biológico</label>
+            <select id="charGender" 
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors">
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Número do CPF <span class="text-green-400 font-mono font-bold">(Final HZ)</span></label>
+            <input type="text" id="charCpf" placeholder="000.000.000-HZ" value="382.411.088-HZ" maxlength="14"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors">
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Celular / Contato</label>
+            <input type="text" id="charPhone" placeholder="(00) 00000-0000" value="(21) 98842-1090" maxlength="15"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors">
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-gray-400 block">Data de Nascimento</label>
+            <input type="date" id="charDob" value="1998-04-12"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors">
+          </div>
+
+          <div class="space-y-1 md:col-span-2">
+            <label class="text-xs font-semibold text-gray-400 block">Naturalidade</label>
+            <input type="text" id="charOrigin" value="LOS SANTOS" placeholder="EX: LOS SANTOS"
+              class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-colors uppercase">
+          </div>
+        </div>
+
+        <div class="space-y-4 bg-slate-950 p-4 rounded-lg border border-slate-800">
+          <h3 class="text-xs font-bold text-gray-300 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-sliders text-green-500"></i> Características Avançadas do Cidadão
+          </h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="space-y-1">
+              <label class="text-[11px] font-bold text-gray-400 uppercase block">Cabelo / Penteado</label>
+              <select id="visualHair" class="w-full bg-slate-800 border border-slate-700 rounded py-1.5 px-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="short brown hair, modern combed style">M: Curto Castanho Penteado</option>
+                <option value="buzzcut style cropped black hair">M: Rapado Militar Preto</option>
+                <option value="slicked back black hair with shaved sides">M: Penteado para Trás Degradê</option>
+                <option value="undercut style hair with texturized top">M: Undercut Moderno Texturizado</option>
+                <option value="afro style textured dark hair">M: Afro Texturado Curto</option>
+                <option value="long dreadlocks dark hair gathered back">M: Dreadlocks Longos Puxados</option>
+                <option value="long straight red hair, neat style, sleek strands">F: Longo Ruivo Liso</option>
+                <option value="blonde curly medium hair, voluminous locks">F: Loiro Encaracolado Volumoso</option>
+                <option value="stylish dark brunette bob haircut with straight bangs">F: Chanel Castanho Escuro com Franja</option>
+                <option value="high ponytail sleek dark hair style">F: Rabo de Cavalo Alto Puxado</option>
+                <option value="wavy long brunette ombre hair cascading">F: Longo Ondulado Ombré Hair</option>
+                <option value="braided platinum blonde crown hair style">F: Tranças Embutidas Loiro Platinado</option>
+                <option value="short pixie cut silver gray hair">F: Pixie Cut Curto Prateado</option>
+                <option value="shaved bald head">Careca Completamente Rapado</option>
+              </select>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-bold text-gray-400 uppercase block">Barba / Estilo Facial</label>
+              <select id="visualBeard" class="w-full bg-slate-800 border border-slate-700 rounded py-1.5 px-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="clean shaven smooth face">Sem Barba (Rosto Liso)</option>
+                <option value="short stubble beard, neatly trimmed">Barba Curta Cerrada</option>
+                <option value="full thick dark long beard">Barba Cheia Longa (Lenhador)</option>
+                <option value="stylish thin goatee with connected mustache">Cavanhaque Desenhado com Bigode</option>
+                <option value="classic retro mustache, thick and clean">Bigode Retrô Clássico</option>
+                <option value="corporate neatly lined viking beard style">Barba Estilo Viking Aparada</option>
+                <option value="heavy 5 o clock shadow stubble beard">Barba Por Fazer Marcante</option>
+              </select>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-bold text-gray-400 uppercase block">Etnia / Tom de Pele</label>
+              <select id="visualSkin" class="w-full bg-slate-800 border border-slate-700 rounded py-1.5 px-2 text-xs text-white focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="fair pale skin tone">Clara / Pálida</option>
+                <option value="tan olive skin tone">Morena / Bronzeada</option>
+                <option value="dark brown black skin tone">Negra / Escura</option>
+                <option value="very dark rich ebony skin tone">Negra Retinta / Ébano</option>
+                <option value="east asian smooth light skin tone">Asiática / Clara</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800">
+            <span class="text-[11px] font-bold text-gray-400 uppercase block mb-2">Acessórios & Adicionais Visuais</span>
+            <div class="flex flex-wrap gap-4 text-xs text-gray-300">
+              <label class="flex items-center gap-1.5 cursor-pointer">
+                <input type="checkbox" id="accGlasses" class="rounded border-slate-700 bg-slate-800 text-green-600 focus:ring-green-500">
+                <span>Óculos de Sol Escuros</span>
+              </label>
+              <label class="flex items-center gap-1.5 cursor-pointer">
+                <input type="checkbox" id="accScar" class="rounded border-slate-700 bg-slate-800 text-green-600 focus:ring-green-500">
+                <span>Cicatriz de Combate no Rosto</span>
+              </label>
+              <label class="flex items-center gap-1.5 cursor-pointer">
+                <input type="checkbox" id="accEarring" class="rounded border-slate-700 bg-slate-800 text-green-600 focus:ring-green-500">
+                <span>Brinco Pequeno de Argola</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button id="btnGenerate" class="w-full bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md shadow-md transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-passport"></i> EMITIR HID OFICIAL
+        </button>
+      </div>
+    </section>
+
+    <section class="lg:col-span-6 flex flex-col justify-between bg-slate-900 rounded-xl border border-slate-800 shadow-xl p-6">
+      <div class="space-y-4">
+        <div class="border-b border-slate-800 pb-4 flex justify-between items-center">
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-id-card-clip text-green-500"></i> Cédula Horizon ID Emitida
+          </h2>
+          <span class="text-xs text-gray-400 font-mono">Homologado</span>
+        </div>
+
+        <div class="relative w-full aspect-[1.58/1] rounded-lg overflow-hidden border border-slate-800 shadow bg-slate-950 flex items-center justify-center">
+          
+          <div id="canvasLoader" class="absolute inset-0 bg-slate-950/95 flex flex-col items-center justify-center gap-3 z-10 hidden">
+            <div class="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-sm font-semibold tracking-wide text-gray-300 text-center px-6" id="loaderMessage">Iniciando protocolo de fronteira...</p>
+          </div>
+
+          <canvas id="idCanvas" class="w-full h-full object-contain cursor-pointer"></canvas>
+        </div>
+      </div>
+
+      <div class="mt-6 flex gap-4">
+        <button id="btnDownload" disabled class="flex-1 bg-slate-800 text-slate-500 font-bold py-3 px-4 rounded-md flex items-center justify-center gap-2 transition-all cursor-not-allowed border border-slate-700/50">
+          <i class="fa-solid fa-file-arrow-down"></i> BAIXAR HORIZON ID (.PNG)
+        </button>
+        <button id="btnRandomize" class="border border-slate-700 hover:bg-slate-800 text-gray-200 font-bold py-3 px-4 rounded-md flex items-center justify-center gap-2 transition-all">
+          <i class="fa-solid fa-shuffle"></i> PERFIL ALEATÓRIO
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-900 mt-12 py-6 text-xs text-gray-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-4">
+        <span class="font-bold text-gray-400">Horizon Roleplay - Sistema de Fronteira</span>
+        <span>|</span>
+        <span>Documentação fictícia gerada exclusivamente para uso dentro do servidor.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const charName = document.getElementById('charName');
+    const charNick = document.getElementById('charNick');
+    const charGender = document.getElementById('charGender');
+    const charCpf = document.getElementById('charCpf');
+    const charPhone = document.getElementById('charPhone');
+    const charDob = document.getElementById('charDob');
+    const charOrigin = document.getElementById('charOrigin');
+    
+    const visualHair = document.getElementById('visualHair');
+    const visualBeard = document.getElementById('visualBeard');
+    const visualSkin = document.getElementById('visualSkin');
+    const accGlasses = document.getElementById('accGlasses');
+    const accScar = document.getElementById('accScar');
+    const accEarring = document.getElementById('accEarring');
+
+    const btnGenerate = document.getElementById('btnGenerate');
+    const btnDownload = document.getElementById('btnDownload');
+    const btnRandomize = document.getElementById('btnRandomize');
+    const canvasLoader = document.getElementById('canvasLoader');
+    const loaderMessage = document.getElementById('loaderMessage');
+    const canvas = document.getElementById('idCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = 1200;
+    canvas.height = 760;
+
+    let loaderInterval = null;
+    const loadingTexts = [
+      "Consultando banco de dados da cidade Horizon Roleplay...",
+      "Autenticando credenciais e liberando folha de entrada...",
+      "Processando foto oficial tática de imigração...",
+      "Configurando fardamento civil regulamentar...",
+      "Injetando marcas de segurança e numeração do Horizon ID...",
+      "Finalizando assinatura digital do Departamento de Trânsito..."
+    ];
+
+    // Forçar maiúsculo em tempo real nos inputs textuais
+    [charName, charNick, charOrigin].forEach(input => {
+      input.addEventListener('input', () => {
+        input.value = input.value.toUpperCase();
+      });
+    });
+
+    // Máscara Inteligente de Celular: (XX) XXXXX-XXXX
+    charPhone.addEventListener('input', (e) => {
+      let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+      e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+
+    // Máscara Inteligente de CPF travada com final HZ
+    charCpf.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/-HZ$/i, '');
+      let digits = value.replace(/\D/g, '').substring(0, 9);
+      
+      let formatted = '';
+      if (digits.length > 0) {
+        formatted += digits.substring(0, 3);
+        if (digits.length > 3) formatted += '.' + digits.substring(3, 6);
+        if (digits.length > 6) formatted += '.' + digits.substring(6, 9);
+      }
+      
+      e.target.value = formatted ? formatted + '-HZ' : '';
+    });
+
+    const stockAvatars = {
+      M: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"],
+      F: ["https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"]
+    };
+
+    const testProfiles = [
+      { name: "GUILHERME SANTOS", nick: "GIZA", gender: "M", cpf: "123.559.870-HZ", phone: "(11) 98765-1122", dob: "1994-08-20", origin: "RIO DE JANEIRO", hair: "buzzcut style cropped black hair", beard: "short stubble beard, neatly trimmed", skin: "tan olive skin tone", glasses: true, scar: false, earring: false },
+      { name: "LETÍCIA RIBEIRO", nick: "RUIVA", gender: "F", cpf: "442.110.893-HZ", phone: "(21) 97112-9988", dob: "1997-12-05", origin: "BELO HORIZONTE", hair: "long straight red hair, neat style, sleek strands", beard: "clean shaven smooth face", skin: "fair pale skin tone", glasses: false, scar: false, earring: true },
+      { name: "MARCOS ALMEIDA", nick: "CONDE", gender: "M", cpf: "551.229.340-HZ", phone: "(21) 99822-1144", dob: "1991-10-14", origin: "LOS SANTOS", hair: "slicked back black hair with shaved sides", beard: "heavy 5 o clock shadow stubble beard", skin: "dark brown black skin tone", glasses: false, scar: true, earring: false },
+      { name: "JULIA COSTA", nick: "JUZINHA", gender: "F", cpf: "228.441.902-HZ", phone: "(31) 98551-2390", dob: "2001-05-22", origin: "VICE CITY", hair: "high ponytail sleek dark hair style", beard: "clean shaven smooth face", skin: "east asian smooth light skin tone", glasses: true, scar: false, earring: true }
+    ];
+
+    function startLoadingSequence() {
+      canvasLoader.classList.remove('hidden');
+      let textIndex = 0;
+      loaderMessage.textContent = loadingTexts[textIndex];
+      
+      clearInterval(loaderInterval);
+      loaderInterval = setInterval(() => {
+        textIndex = (textIndex + 1) % loadingTexts.length;
+        loaderMessage.textContent = loadingTexts[textIndex];
+      }, 2500);
+    }
+
+    function hideLoader() {
+      canvasLoader.classList.add('hidden');
+      clearInterval(loaderInterval);
+    }
+
+    btnRandomize.addEventListener('click', () => {
+      const profile = testProfiles[Math.floor(Math.random() * testProfiles.length)];
+      charName.value = profile.name;
+      charNick.value = profile.nick;
+      charGender.value = profile.gender;
+      charCpf.value = profile.cpf;
+      charPhone.value = profile.phone;
+      charDob.value = profile.dob;
+      charOrigin.value = profile.origin;
+
+      visualHair.value = profile.hair;
+      visualBeard.value = profile.beard;
+      visualSkin.value = profile.skin;
+      accGlasses.checked = profile.glasses;
+      accScar.checked = profile.scar;
+      accEarring.checked = profile.earring;
+
+      drawCardFramework();
+    });
+
+    function getFirstName(fullName) {
+      const parts = fullName.trim().split(/\s+/);
+      return parts[0] || "CIDADÃO";
+    }
+
+    function drawFingerprint(ctx, cx, cy) {
+      ctx.strokeStyle = 'rgba(17, 34, 24, 0.85)';
+      ctx.lineWidth = 1.8;
+      ctx.lineCap = 'round';
+      for (let i = 0; i < 14; i++) {
+        ctx.beginPath();
+        const rx = 10 + i * 5;
+        const ry = 15 + i * 7.5;
+        for (let angle = 0; angle < Math.PI * 2; angle += 0.08) {
+          const wave = Math.sin(angle * 6) * 1.5;
+          const x = cx + (rx + wave) * Math.cos(angle);
+          const y = cy + (ry + wave) * Math.sin(angle) * 1.1 - (angle > Math.PI ? (angle - Math.PI) * 2 : 0);
+          if (angle === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+    }
+
+    btnGenerate.addEventListener('click', async () => {
+      startLoadingSequence();
+      
+      const genderTerm = charGender.value === 'M' ? 'man' : 'woman';
+      const hair = visualHair.value;
+      const beard = visualBeard.value;
+      const skin = visualSkin.value;
+
+      let accessories = [];
+      if (accGlasses.checked) accessories.push("dark black sunglasses");
+      if (accScar.checked) accessories.push("subtle facial scar on cheek");
+      if (accEarring.checked) accessories.push("small silver hoop earring");
+      const accessoriesPrompt = accessories.length > 0 ? `, wearing ${accessories.join(' and ')}` : '';
+
+      const systemImagePrompt = `A 2D digital painting of a serious ${genderTerm} with ${skin}, ${hair}, and ${beard}${accessoriesPrompt}, wearing a plain basic crewneck white t-shirt, in the classic vector artwork style of Grand Theft Auto V loading screens. Subject is looking straight ahead at the camera with a completely blank expressionless face, solid clean plain white background, sharp clean lines, cell-shaded portrait, passport photo composition`;
+
+      try {
+        const seedAleatorio = Math.floor(Math.random() * 1000000);
+        const timestamp = Date.now();
+        const aiImageUrl = `https://image.pollinations.ai/p/${encodeURIComponent(systemImagePrompt)}?width=512&height=512&seed=${seedAleatorio}&nocache=${timestamp}`;
+        
+        drawFinalCard(aiImageUrl);
+      } catch (err) {
+        console.error("Erro no fluxo:", err);
+        renderLocalCard();
+      }
+    });
+
+    function renderLocalCard() {
+      const list = stockAvatars[charGender.value];
+      drawFinalCard(list[0]);
+    }
+
+    function drawFinalCard(avatarSrc) {
+      const imgAvatar = new Image();
+      const imgLogo = new Image(); 
+      
+      let assetsLoaded = 0;
+      const totalAssets = 2;
+
+      function checkAssetsAndRender() {
+        assetsLoaded++;
+        if (assetsLoaded === totalAssets) {
+          renderCanvas();
+        }
+      }
+
+      imgAvatar.crossOrigin = "anonymous";
+      imgAvatar.src = avatarSrc;
+      imgAvatar.onload = checkAssetsAndRender;
+      imgAvatar.onerror = () => {
+        imgAvatar.src = stockAvatars[charGender.value][0];
+        checkAssetsAndRender();
+      };
+
+      imgLogo.src = "horizon.png";
+      imgLogo.onload = checkAssetsAndRender;
+      imgLogo.onerror = () => {
+        checkAssetsAndRender();
+      };
+
+      function renderCanvas() {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Fundo Verde Clássico Estilo RG mantido e otimizado
+        const rgBgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        rgBgGradient.addColorStop(0, '#eefbf4');
+        rgBgGradient.addColorStop(0.5, '#e4f7eb');
+        rgBgGradient.addColorStop(1, '#d5ecd9');
+        ctx.fillStyle = rgBgGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = '#cbebd8';
+        ctx.lineWidth = 1;
+        for (let i = 0; i < canvas.width; i += 30) {
+          ctx.beginPath();
+          ctx.moveTo(i, 0);
+          ctx.bezierCurveTo(i + 15, canvas.height / 2, i - 15, canvas.height / 2, i, canvas.height);
+          ctx.stroke();
+        }
+
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 8;
+        ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+        ctx.strokeStyle = '#43935c';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+        ctx.fillStyle = '#275d38';
+        ctx.font = 'bold 32px "Rajdhani"';
+        ctx.fillText("HORIZON ROLEPLAY • IDENTIDADE INTEGRADA", 330, 75);
+        
+        ctx.fillStyle = '#4b5563';
+        ctx.font = '700 16px "Rajdhani"';
+        ctx.fillText("SECRETARIA DE REGISTRO NACIONAL E CONTROLE DE FRONTEIRA", 330, 105);
+
+        // --- SOLUÇÃO PARA A LOGO TRANSPARENTE E BRANCA ---
+        // Criação de um brasão/badge circular verde escuro atrás da logo para dar o contraste necessário
+        ctx.beginPath();
+        ctx.arc(177.5, 82.5, 42, 0, Math.PI * 2);
+        ctx.fillStyle = '#0a2f1d'; // Verde bem escuro clássico do RG militar
+        ctx.fill();
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        if (imgLogo.complete && imgLogo.naturalWidth !== 0) {
+          // Renderiza a logo branca centralizada dentro do círculo protetor
+          ctx.drawImage(imgLogo, 140, 45, 75, 75);
+        } else {
+          // Fallback visual caso o arquivo horizon.png falhe ao carregar localmente
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 36px "Rajdhani"';
+          ctx.textAlign = 'center';
+          ctx.fillText("H", 177.5, 94);
+          ctx.textAlign = 'start';
+        }
+
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(35, 140);
+        ctx.lineTo(canvas.width - 35, 140);
+        ctx.stroke();
+
+        // Foto do Avatar
+        const px = 60, py = 180, pw = 300, ph = 400;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(px, py, pw, ph);
+        
+        const imgRatio = imgAvatar.width / imgAvatar.height;
+        const targetRatio = pw / ph;
+        let sx = 0, sy = 0, sw = imgAvatar.width, sh = imgAvatar.height;
+
+        if (imgRatio > targetRatio) {
+          sw = imgAvatar.height * targetRatio;
+          sx = (imgAvatar.width - sw) / 2;
+        } else {
+          sh = imgAvatar.width / targetRatio;
+          sy = (imgAvatar.height - sh) / 2;
+        }
+
+        ctx.drawImage(imgAvatar, sx, sy, sw, sh, px, py, pw, ph);
+
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(px, py, pw, ph);
+
+        ctx.fillStyle = '#f1faf5';
+        ctx.fillRect(60, 600, 300, 110);
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(60, 600, 300, 110);
+
+        ctx.fillStyle = '#374151';
+        ctx.font = '700 11px "Rajdhani"';
+        ctx.fillText("POLEGAR DIREITO / THUMBPRINT", 70, 618);
+
+        drawFingerprint(ctx, 210, 655);
+
+        const dx = 420;
+        const dy = 180;
+
+        function drawRGField(label, value, x, y, width = 700) {
+          ctx.fillStyle = '#4c6154';
+          ctx.font = 'bold 15px "Rajdhani"';
+          ctx.fillText(label.toUpperCase(), x, y);
+          
+          ctx.fillStyle = '#111827';
+          ctx.font = '800 28px "Rajdhani"';
+          ctx.fillText(value.toUpperCase(), x, y + 32);
+
+          ctx.strokeStyle = '#bddac7';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(x, y + 42);
+          ctx.lineTo(x + width, y + 42);
+          ctx.stroke();
+        }
+
+        drawRGField("HORIZON ID / HID", "HID-" + Math.floor(100000 + Math.random() * 900000), dx, dy, 320);
+        drawRGField("STATUS DE REGISTRO", "AUTORIZADO", dx + 380, dy, 320);
+
+        drawRGField("NOME DO CIDADÃO", charName.value, dx, dy + 80);
+
+        const nicknameValue = charNick.value.trim() ? `"${charNick.value.trim()}"` : "NÃO POSSUI";
+        drawRGField("ALCUNHA / APELIDO (NOME SOCIAL)", nicknameValue, dx, dy + 160);
+        
+        drawRGField("NATURALIDADE", charOrigin.value, dx, dy + 240, 320);
+
+        const dateRaw = new Date(charDob.value);
+        const formattedDate = !isNaN(dateRaw.getTime()) ? dateRaw.toLocaleDateString('pt-BR') : '12/04/1998';
+        drawRGField("DATA DE NASCIMENTO", formattedDate, dx + 380, dy + 240, 320);
+
+        drawRGField("CADASTRO DE PESSOA FÍSICA (CPF)", charCpf.value, dx, dy + 320, 320);
+        drawRGField("REGISTRO DE CONTATO (TELEFONE)", charPhone.value, dx + 380, dy + 320, 320);
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.fillRect(dx, dy + 410, 700, 110);
+        ctx.strokeStyle = '#275d38';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(dx, dy + 410, 700, 110);
+
+        ctx.fillStyle = '#275d38';
+        ctx.font = 'bold 12px "Rajdhani"';
+        ctx.fillText("ASSINATURA DE EMBARQUE / DIGITAL SIGNATURE", dx + 15, dy + 428);
+
+        ctx.fillStyle = '#0f172a';
+        ctx.font = '700 48px "Caveat"';
+        const signatureText = getFirstName(charName.value);
+        ctx.fillText(signatureText, dx + 100, dy + 482);
+
+        ctx.fillStyle = '#374151';
+        ctx.font = '700 13px "Rajdhani"';
+        ctx.fillText("VÁLIDO EM TODO O TERRITÓRIO SERVIDOR HORIZON ROLEPLAY", dx, 715);
+        ctx.fillText("AUTENTICAÇÃO: HID-" + Math.random().toString(36).substring(2, 12).toUpperCase(), dx + 400, 715);
+
+        // Efeito de reflexo plastificado premium rebatendo a luz
+        const reflection = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        reflection.addColorStop(0, 'rgba(255, 255, 255, 0.0)');
+        reflection.addColorStop(0.35, 'rgba(255, 255, 255, 0.0)');
+        reflection.addColorStop(0.4, 'rgba(255, 255, 255, 0.13)'); 
+        reflection.addColorStop(0.45, 'rgba(255, 255, 255, 0.0)');
+        reflection.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+        ctx.fillStyle = reflection;
+        ctx.fillRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+        btnDownload.disabled = false;
+        btnDownload.className = "flex-1 bg-green-700 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md";
+
+        hideLoader();
+      }
+    }
+
+    function drawCardFramework() {
+      // Ajustado background do framework para harmonizar com o tema escuro externo
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 10;
+      ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+      ctx.fillStyle = '#64748b';
+      ctx.font = 'bold 24px "Rajdhani"';
+      ctx.textAlign = 'center';
+      ctx.fillText("SISTEMA DE EMISSÃO HORIZON ID", canvas.width / 2, canvas.height / 2 - 20);
+      ctx.font = '16px "Rajdhani"';
+      ctx.fillText("Preencha as informações do personagem para gerar sua licença de entrada.", canvas.width / 2, canvas.height / 2 + 20);
+      ctx.textAlign = 'start';
+    }
+
+    btnDownload.addEventListener('click', () => {
+      if (btnDownload.disabled) return;
+      const dataURL = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.download = `HorizonID_${charName.value.replace(/\s+/g, '_')}.png`;
+      link.href = dataURL;
+      link.click();
+    });
+
+    window.onload = function() {
+      drawCardFramework();
+    };
+  </script>
+</body>
+</html>
